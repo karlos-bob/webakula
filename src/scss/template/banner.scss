@@ -1,0 +1,72 @@
+.banner {
+  width: 100%;
+  z-index: 998;
+  position: relative;
+  display: block;
+
+  .banner-carousel {
+    position: relative;
+  }
+
+  .carousel-inner > .carousel-item > img {
+    min-width: 100%;
+    min-height: 250px;
+    max-height: 736px;
+    height: 100%;
+  }
+
+  .carousel-indicators {
+    right: unset;
+    margin: 0 0 25px;
+  }
+
+  .carousel-indicators > li {
+    width: 15px;
+    height: 14px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .carousel-indicators > li.active {
+    background-color: $yellow;
+  }
+
+
+  .banner-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    //top: 44%;
+    margin: 0 auto;
+
+    .banner-overlay {
+      background-color: rgba(0, 76, 132, 0.5);
+      position: absolute;
+      width: 399%;
+      height: 230px;
+      left: -310%; //optimize for media-queris
+    }
+
+    .banner-info-wrap {
+      position: relative;
+      margin-top: 5%;
+
+      p {
+        text-align: left;
+        color: #fff;
+        font-size: 30px;
+        font-weight: bold;
+        font-family: Arial;
+      }
+
+      button {
+        margin-top: 40px;
+      }
+    }
+  }
+}
+
+
+
+

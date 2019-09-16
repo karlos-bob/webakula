@@ -1,0 +1,29 @@
+//vars
+$yellow: rgb(251, 211, 65);
+
+//grid sizes
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px);
+
+//components
+button.btn {
+  background-color: $yellow;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  color: #000;
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+
+  &:hover,
+  &:focus {
+    background-color: #ffb57c;
+  }
+}
+
+h1.title {
+  font-size: 24px;
+  font-weight: bold;
+}
