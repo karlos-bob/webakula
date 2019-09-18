@@ -1,9 +1,14 @@
-//vars
+//colors
 $yellow: rgb(251, 211, 65);
+$dark-blue: #22334d;
+
+//owl-carousel arrows' position
+$desktop: -3%;
+$mobile: 30%;
 
 //grid sizes
-$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
-$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px);
+//$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
+//$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px);
 
 //components
 button.btn {
@@ -17,13 +22,37 @@ button.btn {
   text-align: center;
   font-weight: bold;
 
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+
   &:hover,
   &:focus {
     background-color: #ffb57c;
   }
 }
-
 h1.title {
   font-size: 24px;
   font-weight: bold;
+
+  @media (max-width: 768px) {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+
+  @media (max-width: 576px) {
+    margin-bottom: 15px;
+  }
+
+  @media (min-width: 768px) {
+    margin-bottom: 30px;
+    text-align: left;
+  }
+
+  @media (min-width: 992px) {
+    margin-bottom: 40px;
+  }
+
+
 }

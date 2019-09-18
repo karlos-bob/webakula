@@ -1,13 +1,43 @@
 .advantages {
-  padding: 45px 0 75px;
   background-color: rgb(248, 247, 247);
 
-  h1 {
-    margin-bottom: 40px;
+  @media (max-width: 768px) {
+    padding: 45px 15px 75px;
+  }
+  @media (min-width: 768px) {
+    padding: 45px 0 45px;
+  }
+  @media (min-width: 992px) {
+    padding: 45px 0;
+  }
+  @media (min-width: 992px) {
+    padding: 45px 0 75px;
   }
 
   .advantages-container-inner {
     display: block;
+
+    .img-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media (max-width: 768px) {
+        padding: 45px 15px 75px;
+        img {
+          width: 100%;
+        }
+      }
+      @media (max-width: 576px) {
+        padding: 15px 15px 20px;
+      }
+      @media (min-width: 576px) {
+        padding: 25px 15px 35px;
+      }
+      @media (min-width: 768px) {
+        padding: 45px 0;
+      }
+    }
 
     .description-wrap {
       display: flex;
@@ -16,7 +46,6 @@
 
       .advantages-description {
         font-family: Arial;
-        font-size: 16px;
         position: relative;
         text-align: left;
         height: 184px;
@@ -26,21 +55,32 @@
         padding-right: 50px;
         margin-top: 20px;
 
+
+        @media (max-width: 768px) {
+          font-size: 18px;
+          height: 180px;
+        }
+
+        @media (min-width: 768px) {
+          font-size: 16px;
+          height: 192px;
+        }
+
+
         //firefox scrollbar styling
         scrollbar-color: $yellow rgba(18, 18, 18, 0.1);;
         scrollbar-width: thin;
 
+        //chrome&webkit scrollbar styling
         &::-webkit-scrollbar {
           width: 4px;
         }
-
         &::-webkit-scrollbar-track {
           width: 1px;
           background: rgba(18, 18, 18, 0.1);
           //background-clip: content-box;
 
         }
-
         &::-webkit-scrollbar-thumb {
           background: transparent;
           position: absolute;

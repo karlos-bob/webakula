@@ -1,29 +1,70 @@
 header {
-  background-color: transparent;
   position: absolute;
   width: 100%;
   z-index: 999;
   padding: 3px 0;
-  background-color: #22334d;//DEV ONLY
 
-  .header-wrap {
-    position: relative;
+  @media (min-width: 768px) {
+    background-color: transparent;
+  }
+  @media (max-width: 768px) {
+    padding: 5px 0;
+  }
+  @media (max-width: 992px) {
+    position: static;
+    background-color: $dark-blue;
   }
 
-  nav.navbar {
-    padding: 0;
-    a.header__logo {
-      margin: 3px 0;
+  nav {
+    .header-logo {
+      display: block;
 
-      img.logo-big {
-        display: block;
+      @media (max-width: 768px) {
+        img.logo-desktop {
+          display: none;
+        }
+        img.logo-mobile {
+          display: block;
+        }
       }
-      img.logo-small {
+      @media (min-width: 768px) {
+        img.logo-desktop {
+          display: block;
+        }
+        img.logo-mobile {
+          display: none;
+        }
+      }
+
+    }
+    button.navbar-toggler {
+      outline: none;
+
+      i {
+        font-family: FontAwesome;
+        color: #fff;
+      }
+
+      @media (min-width: 768px) {
         display: none;
       }
+      @media (max-width: 768px) {
+        display: block;
+      }
+
     }
 
     .navbar-collapse {
+
+      @media (min-width: 768px) {
+        flex-direction: column;
+        align-items: flex-end;
+
+      }
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+
       .header__reference {
         width: 100%;
         display: flex;
@@ -31,19 +72,49 @@ header {
         margin: 22px 0 18px;
         justify-content: flex-end;
 
+        @media (min-width: 768px) {
+
+
+        }
+        @media (max-width: 768px) {
+          justify-content: center;
+        }
+
         .ref-button {
-          display: none;
           background-color: transparent;
-          border: 1px solid rgba(255, 255, 255, 0.8);
-          border-radius: 5px;
+          border: 2px solid rgba(255, 255, 255, 0.6);
+          border-radius: 3px;
           width: 22px;
           height: 22px;
+
+          @media (min-width: 992px) {
+            display: none;
+
+          }
+          @media (max-width: 992px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 25px;
+
+            img {
+              width: 16px;
+              height: 13px;
+            }
+          }
         }
 
         .header__address,
         .header__phone {
           margin-left: 40px;
           color: #f3f3f3;
+
+          @media (min-width: 992px) {
+            display: block;
+          }
+          @media (max-width: 992px) {
+            display: none;
+          }
         }
 
         .header__address::before,
@@ -59,7 +130,6 @@ header {
           width: 13px;
           height: 18px;
         }
-
         .header__phone::before {
           background: url("../img/icons/phone_icon.png");
           width: 17px;
@@ -71,72 +141,92 @@ header {
         }
 
       }
-
+      //---------------------------
       ul.navbar-nav {
-        //max-width: 768px;
-        justify-content: space-around;
-        background-color: $yellow;
-        border-radius: 10px;
+        width: 100%;
+        position: relative;
+        flex-wrap: wrap;
 
-        li.nav-item {
+        @media (min-width: 768px) {
+          max-width: 760px;
+          background-color: $yellow;
+          border-radius: 10px;
+          justify-content: space-around;
+        }
+        @media (max-width: 992px) {
+          position: static;
+          background-color: transparent;;
+        }
 
-          a.nav-link {
-            position: relative;
+        a.nav-link {
+          position: relative;
+          margin: 12px auto 10px;
+          padding: 0;
+          font-family: "Arial";
+          font-weight: 700;
+          font-size: 18px;
+          outline: 0;
+          cursor: pointer;
+
+          @media (min-width: 768px) {
             color: #000;
-            margin: 12px 22px 10px;
-            padding: 0;
-            font-family: "Arial";
-            font-weight: 700;
-            font-size: 18px;
-            outline: 0;
-            cursor: pointer;
           }
+          @media (max-width: 768px) {
+            text-align: left;
+            margin: 20px 0;
+            font-size: 23px;
+            color: #fff;
+          }
+          @media (max-width: 992px) {
+            color: #fff;
+          }
+        }
+        a.dropdown-toggle::after {
+          border: none;
+          font-family: FontAwesome;
+          content: "\f078";
+          font-size: 11px;
+          vertical-align: 0.100em;
+        }
+        .dropdown-menu {
+          background-color: rgba(51, 151, 226, 0.8);
+          border-radius: 0;
+          padding: 0;
+          top: 90%;
+          box-shadow: -1px 4px 15px 1px rgba(0, 0, 0, 0.10);
 
-          a.dropdown-toggle::after {
+          @media (max-width: 768px) {
+            background-color: transparent;
+            box-shadow: none;
             border: none;
-            font-family: FontAwesome;
-            content: "\f078";
-            font-size: 11px;
-            vertical-align: 0.100em;
+
           }
 
-          .dropdown-menu {
-            background-color: rgba(51, 151, 226, 0.8);
-            border-radius: 0;
-            padding: 0;
-            top: 93%;
-            box-shadow: -1px 4px 15px 1px rgba(0, 0, 0, 0.10);
-            a.dropdown-item {
-              color: #fff;
-              //margin: 10px 0;
-              padding: 10px 1.5rem;
+          a.dropdown-item {
+            color: #fff;
+            padding: 10px 1.5rem;
 
-              &:focus,
-              &:hover {
-                background-color: initial;
-                color: #000;
+            @media (max-width: 768px) {
+              font-size: 16px;
+              padding: 20px 0;
+              border-bottom: 1px solid #fff;
+
+              &:last-child {
+                border-bottom: none;
               }
             }
 
+            &:focus,
+            &:hover {
+              background-color: initial;
+              color: $yellow;
+            }
           }
         }
       }
     }
-  }
-
-  button.navbar-toggler {
-    position: absolute;
-    right: 0;
-    top: 22px;
-    outline: none;
-
-
-    i {
-      font-family: FontAwesome;
-      color: #fff; //Dev
-    }
-  }
-
 
   }
+
+}
 

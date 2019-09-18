@@ -1,44 +1,91 @@
 .banner {
-  width: 100%;
+  //width: 100%;
   z-index: 998;
   position: relative;
   display: block;
 
   .banner-carousel {
     position: relative;
-  }
-
-  .carousel-inner > .carousel-item > img {
-    min-width: 100%;
-    min-height: 250px;
-    max-height: 736px;
+    display: block;
+    width: 100%;
     height: 100%;
-  }
 
-  .carousel-indicators {
-    right: unset;
-    margin: 0 0 25px;
-  }
+    .carousel-item {
+      display: block;
+      width: 100%;
+      img {
+        width: 100%;
 
-  .carousel-indicators > li {
-    width: 15px;
-    height: 14px;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-    cursor: pointer;
-  }
+        @media (max-width: 768px) {
+          min-height: 200px;
+        }
+      }
+    }
 
-  .carousel-indicators > li.active {
-    background-color: $yellow;
-  }
+    .owl-dots {
+      //width: 100%;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      position: absolute;
+      bottom: 50px;
+      text-align: left;
 
+      @media (min-width: 576px) {
+        max-width: 540px;
+      }
+      @media (min-width: 768px) {
+        max-width: 720px;
+      }
+      @media (max-width: 768px) {
+        text-align: center;
+      }
+      @media (min-width: 992px) {
+        max-width: 960px;
+      }
+      @media (max-width: 992px) {
+        bottom: 10px;
+      }
+      @media (min-width: 1200px) {
+        max-width: 1140px;
+      }
+
+      .owl-dot {
+        outline: 0;
+
+        &:hover span {
+          background: rgba(255, 255, 255, 1);
+        }
+
+        span {
+          width: 15px;
+          height: 14px;
+          background: rgba(255, 255, 255, 0.7);
+        }
+
+      }
+      .active > span { background: $yellow;}
+      .active:hover > span {background: $yellow;}
+
+    }
+  }
 
   .banner-container {
     position: absolute;
     left: 0;
     right: 0;
-    //top: 44%;
     margin: 0 auto;
+
+    @media (max-width: 992px) {
+      top: 10%;
+    }
+    @media (min-width: 992px) {
+      top: 30%;
+    }
+    @media (min-width: 768px) {
+      top: 35%;
+    }
+
 
     .banner-overlay {
       background-color: rgba(0, 76, 132, 0.5);
@@ -46,11 +93,42 @@
       width: 399%;
       height: 230px;
       left: -310%; //optimize for media-queris
+      z-index: 999;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+      @media (max-width: 992px) {
+        height: 185px;
+      }
+      @media (min-width: 1200px) {
+        height: 230px;
+      }
+      @media (max-width: 1200px) {
+        height: 160px;
+      }
     }
 
     .banner-info-wrap {
       position: relative;
-      margin-top: 5%;
+      z-index: 1000;
+
+
+      @media (max-width: 567px) {
+        margin-top: 1%;
+      }
+      @media (max-width: 768px) {
+        margin-top: 7%;
+      }
+      @media (min-width: 768px) {
+        margin-top: 6%;
+      }
+      @media (min-width: 992px) {
+        margin-top: 5%;
+      }
+      @media (min-width: 1200px) {
+        margin-top: 4%;
+      }
 
       p {
         text-align: left;
@@ -58,10 +136,28 @@
         font-size: 30px;
         font-weight: bold;
         font-family: Arial;
+
+        @media (max-width: 992px) {
+          font-size: 22px;
+        }
+        @media (max-width: 768px) {
+          text-align: center;
+          font-size: 18px;
+        }
+
       }
 
       button {
         margin-top: 40px;
+        display: block;
+
+        @media (max-width: 1200px) {
+          margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+          margin: 10px auto 0;
+          font-size: 14px;
+        }
       }
     }
   }
